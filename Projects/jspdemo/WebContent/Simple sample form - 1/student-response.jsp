@@ -8,5 +8,9 @@
 </head>
 <body>
 Congurulations for successful submition  ${param.firstName} ${param.lastName}
+<br><br>
+country is : ${param.country }
+<br><br>
+Language is : ${param.language }
 </body>
 </html>
