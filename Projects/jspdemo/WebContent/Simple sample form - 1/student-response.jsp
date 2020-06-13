@@ -12,5 +12,14 @@ Congurulations for successful submition  ${param.firstName} ${param.lastName}
 country is : ${param.country }
 <br><br>
 Language is : ${param.language }
+<br><br>
+Likable Language are : <%
+	String[] langs = request.getParameterValues("language1");
+	if (langs != null) {
+		for(String temp : langs){
+			out.println(temp + "<br>");
+		}
+	}
+%>
 </body>
 </html>
