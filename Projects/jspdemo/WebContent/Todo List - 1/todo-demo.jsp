@@ -26,9 +26,14 @@ Item entered: <%= request.getParameter("theItem") %>
 		session.setAttribute("myToDoList", items);
 	}
 	String theItem = request.getParameter("theItem");
-	if(theItem != null)
+	
+	boolean isItemNotEmpty = theItem != null && theItem.trim().length() > 0;
+	boolean isItemNotDuplicate = theItem != null && !items.contains(theItem.trim());
+	
+	if(isItemNotEmpty && isItemNotDuplicate)
 	{
-		items.add(theItem);
+		items.add(theItem.trim());
+		response.sendRedirect("todo-demo.jsp");
 	}
 
 %>
